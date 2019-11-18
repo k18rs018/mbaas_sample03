@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+l.llll<!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8">
@@ -47,6 +47,20 @@
       })
     }
     function deleteData() {
+      UTdata.fetch()
+      .then(function(uTdata){
+        return uTdata.delete();
+      })
+      .then(function(results){
+        $("#display").removeClass();
+        $("#display").addClass("bg-success");
+        $("#display").html("delete success")
+      })
+      .then(function(error){
+        $("#display").removeClass();
+        $("#display").addClass("bg-warning");
+        $("#display").html("delete fail:" + JSON.stringify(error));
+      })
     }
     function updateData() {
     }
